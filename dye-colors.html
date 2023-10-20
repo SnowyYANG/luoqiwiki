@@ -4,59 +4,60 @@
         <meta charset="UTF-8">
         <title>洛奇百科</title>
 		<!--link rel="shortcut icon" href="/favicon.ico"/-->
-        <style>
-            .mcblock {
-                text-align:center;
-                padding-top:0.5em;
-                width:10em;
-                height:2em;
-                display:inline-block;
-            }
-        </style>
+        <link href="/assets/main.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
-        <header>
-            <a href="/" style="color:#000000"><h1>洛奇百科</h1></a>
-        </header>
-        <nav>
-            <a href="/dye-colors">普染颜色代码大全</a><br>
-            <a href="https://github.com/SnowyYANG/MabinogiClock" target="_blank">小闹钟</a><br>
-            <a href="/rabbie">梦幻拉比出货统计</a><br>
-	        <a href="/metalware-old">韩服旧版鉴定概率</a><br>
-        </nav>
-        <main>
-            <h2>普染颜色代码大全</h2>
-            <p>搜索普染和金属普染能染出的精确颜色代码。因天然染色活动，不再更新新版本。</p>
-            <div style="display:flex">
-                <div><img id="palette" crossOrigin="Anonymous" src="https://ik.imagekit.io/snowyyang/luoqiwiki/cloth.png?updatedAt=1697748586686"></div>
-                <div style="margin-left:1em">
-                    <form>
-                        <input id="r1" type="radio" name="c" value="cloth" checked/><label for="r1">全彩</label>
-                        <input id="r2" type="radio" name="c" value="cloth_bright" /><label for="r2">淡彩</label>
-                        <input id="r3" type="radio" name="c" value="leather" /><label for="r3">皮革</label>
-                        <input id="r4" type="radio" name="c" value="silk" /><label for="r4">丝绸</label>
-                        <input id="r5" type="radio" name="c" value="metal" /><label for="r5">金属</label>
-                        <input id="r6" type="radio" name="c" value="weapon" /><label for="r6">武器</label>
-                        <br>
-                        <span style="position:relative">
-                            <input id="cp" type="color" style="position:absolute;left:0;opacity:0;width:0" onchange="this.form.s.value=this.value">
-                            <label for="cp" style="cursor:pointer;text-decoration:underline;color:#0000c0;font-size:80%;font-weight:bold;">点此选色</label>
-                        </span>
-                        <input name="s" style="width:21.3em" placeholder="#008000 R&lt;64 B&lt;64" required>
-                        <button type="submit">搜索</button>
-                    </form>
-                    <p>“#十六进制颜色代码”查找最相似颜色，如“#FFFF00”搜索近似的亮黄色；<br>
-                        “R/G/B大于小于等于号十进制数值”筛选颜色，符号半角不要有空格，如“G=0 B=0”搜索纯红色；<br>
-                        混合使用以上查找，用空格隔开，如“#008000 R&lt;64 B&lt;64”搜索中绿色。<br>
-                </div>
+        <div class="layout">
+            <nav>
+                <header>
+                    <a href="/" style="color:#000000"><h1>洛奇百科</h1></a>
+                </header>
+                <a href="/dye-colors">普染颜色代码大全</a><br>
+                <a href="https://github.com/SnowyYANG/MabinogiClock" target="_blank">小闹钟</a><br>
+                <a href="/rabbie">梦幻拉比出货统计</a><br>
+                <a href="/metalware-old">韩服旧版鉴定概率</a><br>
+            </nav>
+            <div class="layout-r">
+<main>
+    <style>
+        .mcblock {
+            text-align:center;
+            padding-top:0.5em;
+            width:10em;
+            height:2em;
+            display:inline-block;
+        }
+    </style>        
+    <h2>普染颜色代码大全</h2>
+    <p>搜索普染和金属普染能染出的精确颜色代码。因天然染色活动，不再更新新版本。</p>
+    <div style="display:flex">
+        <div><img id="palette" crossOrigin="Anonymous" src="https://ik.imagekit.io/snowyyang/luoqiwiki/cloth.png?updatedAt=1697748586686"></div>
+        <div style="margin-left:1em">
+            <form>
+                <input id="r1" type="radio" name="c" value="cloth" checked/><label for="r1">全彩</label>
+                <input id="r2" type="radio" name="c" value="cloth_bright" /><label for="r2">淡彩</label>
+                <input id="r3" type="radio" name="c" value="leather" /><label for="r3">皮革</label>
+                <input id="r4" type="radio" name="c" value="silk" /><label for="r4">丝绸</label>
+                <input id="r5" type="radio" name="c" value="metal" /><label for="r5">金属</label>
+                <input id="r6" type="radio" name="c" value="weapon" /><label for="r6">武器</label>
+                <br>
+                <span style="position:relative">
+                    <input id="cp" type="color" style="position:absolute;left:0;opacity:0;width:0" onchange="this.form.s.value=this.value">
+                    <label for="cp" style="cursor:pointer;text-decoration:underline;color:#0000c0;font-size:80%;font-weight:bold;">点此选色</label>
+                </span>
+                <input name="s" style="width:21.3em" placeholder="#008000 R&lt;64 B&lt;64" required>
+                <button type="submit">搜索</button>
+            </form>
+            <p>“#十六进制颜色代码”查找最相似颜色，如“#FFFF00”搜索近似的亮黄色；<br>
+                “R/G/B大于小于等于号十进制数值”筛选颜色，符号半角不要有空格，如“G=0 B=0”搜索纯红色；<br>
+                混合使用以上查找，用空格隔开，如“#008000 R&lt;64 B&lt;64”搜索中绿色。<br>
+        </div>
+    </div>
+    <div id="r"></div>
+    <script defer src="/assets/dye-colors.js"></script>
+</main>
+                <footer>luoqi.wiki©2023 勘误、bug、建议联系：<a href="mailto:snowyyang@outlook.com">snowyyang@outlook.com</a>，或亚特服纸条：冰之妖夜玛一。</footer>
             </div>
-            <div id="r"></div>
-            <script defer src="/assets/dye-colors.js"></script>
-        </main>
-        <footer>
-            <div>勘误、bug、建议联系：<a href="mailto:snowyyang@outlook.com">snowyyang@outlook.com</a>，或亚特服纸条：冰之妖夜玛一。</div>
-            <div>luoqi.wiki 2023</div>
-        </footer>
+        </div>
     </body>
 </html>
-    
