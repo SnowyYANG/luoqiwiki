@@ -1,6 +1,7 @@
 body {
     margin: 0;
     height: 100vh;
+    line-height:1.5;
 }
 .layout {
     display:flex;
@@ -30,7 +31,6 @@ main {
     width:100%;
     max-width:100%;
     box-sizing:border-box;
-    line-height:1.5;
 }
 footer {
     float: left;
