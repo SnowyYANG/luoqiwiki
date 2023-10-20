@@ -47,7 +47,7 @@ var search;
 for(const radio of document.getElementsByName("c")) {
     radio.onchange = function() {
 		colors = this.value;
-        document.getElementById('palette').src = 'https://ik.imagekit.io/snowyyang/luoqiwiki/'+colors+'.png';
+        document.getElementById('palette').src = '/assets/'+colors+'.png';
     };
 }
 
