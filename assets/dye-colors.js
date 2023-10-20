@@ -43,10 +43,10 @@ var i;
 var colors = 'cloth';
 var search;
 
-for(var i = 0; i < document.forms[0].c.length; ++i) {
-    document.forms[0].c.onchange = function() {
-        document.getElementById('palette').src = 'https://ik.imagekit.io/snowyyang/luoqiwiki/'+colors+'.png';
+for(const radio of document.getElementsByName("c")) {
+    radio.onchange = function() {
 		colors = this.value;
+        document.getElementById('palette').src = 'https://ik.imagekit.io/snowyyang/luoqiwiki/'+colors+'.png';
     };
 }
 
