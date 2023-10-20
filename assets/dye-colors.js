@@ -25,12 +25,13 @@ function colorBlock(r,g,b,str) {
     return '<div class="mcblock" style="background-color:rgb('.concat(r,',',g,',',b,');color:',fc,'">',str,'</div>');
 }
 
+var more;
 function morecolor() {
-    /*var xhr = new XMLHttpRequest();
-    if (xhr) {
-        xhr.open('GET','/mc?a=more&c='+encodeURIComponent(colors)+'&s='+encodeURIComponent(search));
-        xhr.send();
-    }*/
+    var beacon = new FormData();
+    beacon.append("color", search);
+    beacon.append("more", more);
+    navigator.sendBeacon('/api/dye-colors-track', beacon);
+    more++;
     var r = [];
     for (num = i; i<results.length && (i<num+100 || results[i][3] === results[i-1][3]); ++i)
         r.push(colorBlock(results[i][0],results[i][1],results[i][2],'#'+(0x1000000 | results[i][2] | (results[i][1] << 8) | (results[i][0] << 16)).toString(16).substr(1)));
@@ -108,6 +109,7 @@ function searchColor() {
     if (S) r.push(colorBlock(R,G,B,'目标颜色'));
     if (results.length) {
 		i = 0;
+        more = 0;
         r.push(morecolor());
     }
 	else r.push('<div>没有找到任何颜色</div>');
