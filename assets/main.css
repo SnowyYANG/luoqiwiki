@@ -35,6 +35,15 @@ main {
     max-width:100%;
     box-sizing:border-box;
 }
+table{
+    border-collapse:collapse;
+    border:1px solid #888;
+    }
+    
+td,th{
+    border:1px solid #888;
+    padding: 0 1em;
+}
 summary {
     cursor: pointer;
 }
