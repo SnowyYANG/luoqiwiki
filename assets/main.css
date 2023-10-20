@@ -12,6 +12,9 @@ nav {
 header {
     text-align: center;
 }
+header a {
+    text-decoration: none;
+}
 .layout-r {
     display:flex;flex-direction:column;flex-grow:8;
 }
