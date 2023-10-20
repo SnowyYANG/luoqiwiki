@@ -14,11 +14,14 @@ nav {
     min-height:100vh;
     padding: 0 0.5em;
 }
+ul {
+    padding:0;
+}
+nav a {
+    text-decoration: none;
+}
 header {
     text-align: center;
-}
-header a {
-    text-decoration: none;
 }
 .layout-r {
     display:flex;
@@ -31,6 +34,9 @@ main {
     width:100%;
     max-width:100%;
     box-sizing:border-box;
+}
+summary {
+    cursor: pointer;
 }
 footer {
     float: left;
