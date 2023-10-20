@@ -5,6 +5,6 @@ export async function onRequestPost(context) {
       var more = formData.get('more');
       var ip = context.request.headers.get('CF-Connecting-IP');
       context.env.db.prepare('INSERT INTO `dye-colors-search` (color,more,ip) VALUES(?,?,?)').bind(color,more,ip).run();
-  });
-  return new Response("Hello, world!");
+      return new Response("Hello, world!");
+    });
 }
