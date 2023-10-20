@@ -1,4 +1,4 @@
-export async function onRequestPost(context) {
+export function onRequestPost(context) {
   context.env.db.prepare('INSERT INTO `dye-colors-search` (color,more,ip) VALUES(?,?,?)').bind("#000",0,"127.0.0.1").run();
   /*context.request.formData()
   .then((formData)=>{
