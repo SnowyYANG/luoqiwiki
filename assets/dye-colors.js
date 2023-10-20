@@ -28,6 +28,7 @@ function colorBlock(r,g,b,str) {
 var more;
 function morecolor() {
     var beacon = new FormData();
+    beacon.append("type", colors);
     beacon.append("color", search);
     beacon.append("more", more);
     navigator.sendBeacon('/api/dye-colors-track', beacon);
