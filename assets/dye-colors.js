@@ -1,25 +1,3 @@
-function getColors(img) {
-    const canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-
-    canvas.width = img.width;
-    canvas.height = img.height;
-
-    ctx.drawImage(img, 0, 0, img.width, img.height);
-
-    const imageData = ctx.getImageData(0, 0, img.width, img.height);
-    const data = imageData.data;
-
-    const colors = new Set();
-
-    for (let i = 0; i < data.length; i += 4) {
-        const color = `${data[i]},${data[i+1]},${data[i+2]}`; // ignoring alpha channel
-        colors.add(color);
-    }
-
-    return Array.from(colors).map(color => color.split(',').map(Number));
-}
-
 function colorBlock(r,g,b,str) {
     var fc = 0.2126*r + 0.7152*g + 0.0722*b>128 ? '#000000' : '#FFFFFF';
     return '<div class="mcblock" style="background-color:rgb('.concat(r,',',g,',',b,');color:',fc,'">',str,'</div>');
@@ -48,19 +26,12 @@ var search;
 for(const radio of document.getElementsByName("c")) {
     radio.onchange = function() {
 		colors = this.value;
-        document.getElementById('palette').src = '/assets/'+colors+'.png';
+        document.getElementById('palette').src = 'https://ik.imagekit.io/snowyyang/luoqiwiki/'+colors+'.png';
     };
 }
 
 document.forms[0].onsubmit = function() {
-    var img = document.getElementById('palette');
-    if (img.complete) searchColor();
-    else {
-        img.onload = function() {
-            searchColor();
-            img.onload = null;
-        };
-    }
+    searchColor();
     return false;
 };
 
@@ -73,7 +44,7 @@ function searchColor() {
     }*/
     var ss = search.split(' ');
     results = [];
-	var _colors = getColors(document.getElementById('palette'));
+	var _colors = window[colors];
     for (var ci in _colors) {
         var c = _colors[ci];
         var match = true;
